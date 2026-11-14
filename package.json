@@ -1,0 +1,1 @@
+{"dependencies":{"@astrojs/sitemap":"^3.7.4","astro":"^5.0.0"},"name":"vorbix-site","private":true,"scripts":{"build":"astro build","dev":"astro dev","prebuild":"node scripts/decode-assets.mjs","preview":"astro preview"},"type":"module","version":"1.0.0"}
