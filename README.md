@@ -9,12 +9,13 @@ Astro and deployed to GitHub Pages on every push to `main`
 - `src/pages/index.astro` — the Coming Soon page. The site is built
   multi-page-ready: add more pages under `src/pages/` (About, Products, …)
   and link them from the nav pill when they're ready.
-- `public/` — static files served as-is (`CNAME`, `favicon.svg`, `site.js`).
-- `assets/` + `scripts/decode-assets.mjs` — the logo and the animated loop
-  are stored here as base64 text (`.b64`) so they can be pushed through the
-  API; the `prebuild` step decodes them into `public/images/` and
-  `public/video/` before every build. To swap an asset, replace the `.b64`
-  file (regenerate with `base64 -w 0 <file>`).
+- `public/` — static files served as-is (`CNAME`, `favicon.svg`, `site.js`,
+  `images/`, `video/`). The logo and the animated loop are ordinary files in
+  `public/images/` and `public/video/`; to swap one, replace the file.
+- Link assets with a leading slash (`/images/...`, `/site.js`) so they keep
+  working on nested pages.
+- The contact address (`admin@vorbixstudios.com`) is set once at the top of
+  `src/pages/index.astro`.
 
 ## Develop
 
@@ -22,6 +23,9 @@ Astro and deployed to GitHub Pages on every push to `main`
 npm install
 npm run dev
 ```
+
+Deploys run `npm ci`, so commit `package-lock.json` whenever dependencies
+change.
 
 ## Custom domain
 

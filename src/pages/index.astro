@@ -1,5 +1,6 @@
 ---
-const ld={'@context':'https://schema.org','@type':'Organization','@id':'https://vorbixstudios.com/#org',name:'Vorbix Studios',url:'https://vorbixstudios.com/',logo:'https://vorbixstudios.com/images/vorbix-logo.jpg',description:'Vorbix Studios works on apps, websites, platforms, games and more — striving to improve with every day, every hour, every program.'};
+const ld={'@context':'https://schema.org','@type':'Organization','@id':'https://vorbixstudios.com/#org',name:'Vorbix Studios',url:'https://vorbixstudios.com/',logo:'https://vorbixstudios.com/images/vorbix-logo.jpg',description:'Vorbix Studios works on apps, websites, platforms, games and more — striving to improve with every day, every hour, every program.',email:'admin@vorbixstudios.com'};
+const email='admin@vorbixstudios.com';
 ---
 <!doctype html>
 <html lang="en"><head>
@@ -14,11 +15,11 @@ const ld={'@context':'https://schema.org','@type':'Organization','@id':'https://
 <meta property="og:image" content="https://vorbixstudios.com/images/vorbix-logo.jpg"><meta property="og:image:width" content="800"><meta property="og:image:height" content="800">
 <link rel="canonical" href="https://vorbixstudios.com/">
 <meta property="og:site_name" content="Vorbix Studios"><meta property="og:locale" content="en_US"><meta property="og:image:alt" content="Vorbix Studios logo">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Vorbix Studios — Coming Soon"><meta name="twitter:description" content="Vorbix Studios works on apps, websites, platforms, games and more — striving to improve with every day, every hour, every program."><meta name="twitter:image" content="https://vorbixstudios.com/images/vorbix-logo.jpg"><meta name="twitter:image:alt" content="Vorbix Studios logo">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Vorbix Studios — Coming Soon"><meta name="twitter:description" content="Vorbix Studios works on apps, websites, platforms, games and more — striving to improve with every day, every hour, every program."><meta name="twitter:image" content="https://vorbixstudios.com/images/vorbix-logo.jpg"><meta name="twitter:image:alt" content="Vorbix Studios logo">
 <meta name="author" content="Vorbix Studios">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
 <meta name="theme-color" content="#0b1224">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 :root{--bg:#0b1224;--text:#e9ecf7;--mut:#9aa6c7;--a:#8b7bff;--b:#4ea3ff;--glass:rgba(255,255,255,.055);--brd:rgba(255,255,255,.13);--brd-hi:rgba(255,255,255,.24);--sh:0 12px 32px rgba(2,6,20,.4);--inner:inset 0 1px 0 rgba(255,255,255,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -40,6 +41,11 @@ nav{position:fixed;top:16px;left:0;right:0;z-index:10;display:flex;justify-conte
 .hero h1{font-size:clamp(1.9rem,4.5vw,2.7rem);line-height:1.1;margin:30px 0 0;background:linear-gradient(90deg,#fff,#b7aaff 55%,#7cb8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .soon{font-size:clamp(3.4rem,12vw,8rem);font-weight:800;letter-spacing:.04em;line-height:.95;margin:20px 0 0;background:linear-gradient(90deg,#fff,#c9bfff 45%,#8ec3ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .tag{color:var(--mut);font-size:1.1rem;margin:22px 0 0;max-width:560px}
+.btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:12px 20px;border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid var(--brd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 24px rgba(2,6,20,.35);color:var(--text);font-weight:600;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.btn:hover{text-decoration:none;transform:translateY(-2px);border-color:var(--brd-hi);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 32px rgba(2,6,20,.45),0 0 24px rgba(139,123,255,.25)}
+.btn.p{background:linear-gradient(135deg,rgba(139,123,255,.5),rgba(78,163,255,.45));border:1px solid rgba(183,170,255,.45);color:#fff}
+.panel p .btn{margin-top:6px}
 .scroll{margin-top:56px;color:var(--mut);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;animation:bob 2.4s ease-in-out infinite}
 .scroll:hover{color:var(--text);text-decoration:none}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
@@ -62,19 +68,21 @@ html.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,tra
 html.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}.scroll{animation:none}html{scroll-behavior:auto}}
 @media(max-width:700px){.vlogo{width:210px;height:210px}.panel{flex-direction:column;align-items:flex-start}}
-@media(max-width:560px){.hero{padding-top:110px}.foot{padding:22px}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+@media(max-width:560px){.hero{padding-top:110px}.foot{padding:22px}.lnks a{padding:7px 9px;font-size:13px}}
 </style></head><body>
-<nav><div class="pill"><a class="brand" href="#top"><img src="images/vorbix-logo.jpg" alt="Vorbix Studios — home" width="34" height="34"></a><div class="lnks"><a href="#top">Home</a></div></div></nav>
+<nav><div class="pill"><a class="brand" href="#top"><img src="/images/vorbix-logo-240.jpg" alt="Vorbix Studios — home" width="34" height="34"></a><div class="lnks"><a href="#what-we-do">What we do</a><a href="#whats-next">What's next</a><a href="#contact">Contact</a></div></div></nav>
 <header id="top" class="w hero">
-<video class="vlogo rv" autoplay muted loop playsinline poster="images/vorbix-logo.jpg" width="280" height="280"><source src="video/vorbix-v-spin-loop.mp4" type="video/mp4"></video>
+<video class="vlogo rv" autoplay muted loop playsinline preload="metadata" poster="/images/vorbix-logo.jpg" width="280" height="280" aria-label="Animated Vorbix Studios logo"><source src="/video/vorbix-v-spin-loop.mp4" type="video/mp4"></video>
 <h1 class="rv">Vorbix Studios</h1>
 <p class="soon rv">COMING SOON</p>
 <p class="tag rv">Something new is on the way.</p>
+<div class="btns rv"><a class="btn p" href={`mailto:${email}`}>Get in touch</a></div>
 <a class="scroll rv" href="#what-we-do">Scroll ↓</a>
 </header>
 <main class="w">
 <section id="what-we-do" class="rv"><h2>What we do</h2>
-<div class="panel"><img class="logo" src="images/vorbix-logo.jpg" width="120" height="120" alt="Vorbix Studios logo">
+<div class="panel"><img class="logo" src="/images/vorbix-logo-240.jpg" width="120" height="120" alt="Vorbix Studios logo" loading="lazy">
 <div><p>Vorbix Studios works on apps, websites, platforms, games and more — striving to improve with every day, every hour, every program.</p></div>
 </div>
 </section>
@@ -82,13 +90,19 @@ html.js .rv.in{opacity:1;transform:none}
 <div class="panel"><div>
 <p>We're building toward a better internet — faster software, cleaner platforms, smarter tools, and experiences people actually enjoy using.</p>
 <p>Everything we make is part of one goal: to make the software, the internet, and the games we all use every day work better, look better, and feel better. Every day, every hour, every program.</p>
-<ul class="chips"><li>Software</li><li>Websites</li><li>Platforms</li><li>Games</li><li>IT Consultant</li><li>Management</li></ul>
+<ul class="chips"><li>Software</li><li>Websites</li><li>Platforms</li><li>Games</li><li>IT Consulting</li><li>Management</li></ul>
+</div></div>
+</section>
+<section id="contact" class="rv"><h2>Contact</h2>
+<div class="panel"><div>
+<p>Have a project in mind, or want to hear when we launch? Email us and we'll get back to you.</p>
+<p><a class="btn p" href={`mailto:${email}`}>{email}</a></p>
 </div></div>
 </section>
 </main>
 <footer class="rv"><div class="w"><div class="foot">
 <div class="fbrand"><b>Vorbix Studios</b><span>Apps · Websites · Platforms · Games</span></div>
-<div class="fcta"><a class="top" href="#top">Back to top ↑</a></div>
-</div><div class="fbase"><span>© {new Date().getFullYear()} Vorbix Studios</span><span>vorbixstudios.com</span></div></div></footer>
-<script src="site.js" defer></script>
+<div class="fcta"><a href={`mailto:${email}`}>{email}</a><a class="top" href="#top">Back to top ↑</a></div>
+</div><div class="fbase"><span>© {new Date().getFullYear()} Vorbix Studios</span><span>Built by Vorbix Studios</span></div></div></footer>
+<script src="/site.js" defer></script>
 </body></html>
